@@ -23,11 +23,11 @@ public class Student2 implements Serializable {
 	@Column(name = "id") // updatable = false, nullable = false
 	private Long id;
 
-	@Column(name = "first_name")
-	private String first_name;
+	@Column(name = "firstName")
+	private String firstName;
 
-	@Column(name = "last_name")
-	private String last_name;
+	@Column(name = "lastName")
+	private String lastName;
 
 	@Column(name = "gender")
 	private String gender;
@@ -43,23 +43,31 @@ public class Student2 implements Serializable {
 
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@Temporal(TemporalType.DATE)
-	@Column(name = "date_of_birth")
-	private Date date_of_birth;
+	@Column(name = "dateOfBirth")
+	private Date dateOfBirth;
 
-	public String getfirst_name() {
-		return first_name;
+	public Long getId() {
+		return id;
 	}
 
-	public void setfirst_name(String first_name) {
-		this.first_name = first_name;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
-	public String getlast_name() {
-		return last_name;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setlast_name(String last_name) {
-		this.last_name = last_name;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public String getGender() {
@@ -94,34 +102,18 @@ public class Student2 implements Serializable {
 		this.roll = roll;
 	}
 
-	public Date getdate_of_birth() {
-		return date_of_birth;
+	public Date getDateOfBirth() {
+		return dateOfBirth;
 	}
 
-	public void setdate_of_birth(Date date_of_birth) {
-		this.date_of_birth = date_of_birth;
-	}
-
-	public Student2() {
-	}
-
-	public Student2(String first_name, String last_name, String gender, String hobby, String country, long roll,
-			Date date_of_birth) {
-
-		this.first_name = first_name;
-		this.last_name = last_name;
-		this.gender = gender;
-		this.hobby = hobby;
-		this.country = country;
-		this.roll = roll;
-		this.date_of_birth = date_of_birth;
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
 	}
 
 	@Override
 	public String toString() {
-		return "Student2 [id=" + id + ", first_name=" + first_name + ", last_name=" + last_name + ", gender=" + gender
-				+ ", hobby=" + hobby + ", country=" + country + ", roll=" + roll + ", date_of_birth=" + date_of_birth
-				+ "]";
+		return "Student2 [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", gender=" + gender
+				+ ", hobby=" + hobby + ", country=" + country + ", roll=" + roll + ", dateOfBirth=" + dateOfBirth + "]";
 	}
 
 }

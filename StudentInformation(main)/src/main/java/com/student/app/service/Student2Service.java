@@ -18,4 +18,8 @@ public class Student2Service {
 	public List<Student2> findStudents() {
 		return student2Repository.findAll();
 	}
+
+	public void deleteStudentById(Long id) {
+		student2Repository.deleteById(id);
+	}
 }

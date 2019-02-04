@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import com.student.app.model.Student;
 import com.student.app.service.StudentService;
 
@@ -16,6 +18,11 @@ public class StudentController {
 	StudentService studentService;
 
 	Logger log = LoggerFactory.getLogger(this.getClass());
+
+	@RequestMapping("/")
+	public String loadHomePage() {
+		return "home";
+	}
 
 	@RequestMapping("/registration")
 	public String getStudent(Model model) {
@@ -28,5 +35,4 @@ public class StudentController {
 		studentService.saveStudent(student);
 		return "form";
 	}
-
 }
