@@ -6,7 +6,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import com.student.app.model.Student2;
 import com.student.app.service.Student2Service;
 
@@ -35,8 +34,15 @@ public class Student2Controller {
 		return "allStudent";
 	}
 
-	@RequestMapping("/updateStudent")
-	public String updateStudent(@RequestParam(name = "id") String id) {
+	@RequestMapping("/editStudent")
+	public String getUpdateStudent(@RequestParam(name = "id") Long id, Model model) {
+		model.addAttribute("student2", student2Service.findOneStudent(id));
+		return "updateStudent";
+	}
+
+	@RequestMapping(value = "updateStudent", method = RequestMethod.POST)
+	public String postUpdateStudent(Model model, Student2 student2) {
+		student2Service.updateStudent(student2);
 		return "redirect:/allStudent";
 	}
 

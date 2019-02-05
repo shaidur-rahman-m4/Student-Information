@@ -15,8 +15,16 @@ public class Student2Service {
 		return student2Repository.save(student2);
 	}
 
+	public Student2 findOneStudent(Long id) {
+		return student2Repository.getOne(id);
+	}
+
 	public List<Student2> findStudents() {
 		return student2Repository.findAll();
+	}
+
+	public Student2 updateStudent(Student2 student2) {
+		return saveNewStudent(student2);
 	}
 
 	public void deleteStudentById(Long id) {

@@ -309,9 +309,10 @@
 											<td th:text="${student.country}"></td>
 											<td th:text="${student.roll}"></td>
 											<td th:text="${student.dateOfBirth}"></td>
-											<td align="right"><a th:href="@{/updateStudent(id=${student.id})}" class="btn btn-info btn-icon-split" onClick="return confirm('Are you absolutely sure want to update?')"> <span class="icon text-white-50"> <i class="fa fa-edit"></i></span> <span class="text">Edit</span>
+											<td align="right"><a th:href="@{/editStudent(id=${student.id})}" class="btn btn-info btn-icon-split"> <span class="icon text-white-50"> <i class="fa fa-edit"></i>
+												</span> <span class="text">Edit </span>
 											</a> &nbsp <a th:href="@{/deleteStudent(id=${student.id})}" class="btn btn-danger btn-icon-split" onClick="return confirm('Are you absolutely sure want to delete?')"> <span class="icon text-white-50"> <i class="fas fa-trash"></i>
-												</span> <span class="text">Delete</span>
+												</span> <span class="text">Delete </span>
 											</a></td>
 										</tr>
 									</tbody>

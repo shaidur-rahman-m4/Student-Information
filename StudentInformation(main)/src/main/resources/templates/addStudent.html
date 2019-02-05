@@ -32,7 +32,7 @@ body {
 .form-control {
 	height: 50px;
 	box-shadow: none;
-	color: #969fa4;
+	color: #1a1b1c;
 }
 
 .form-control:focus {
@@ -50,7 +50,7 @@ body {
 }
 
 .signup-form h2 {
-	color: #636363;
+	color: #191919;
 	margin: 0 0 15px;
 	position: relative;
 	text-align: center;
@@ -75,13 +75,13 @@ body {
 }
 
 .signup-form .hint-text {
-	color: #999;
+	color: #262525;
 	margin-bottom: 30px;
 	text-align: center;
 }
 
 .signup-form form {
-	color: #999;
+	color: #262525;
 	border-radius: 3px;
 	margin-bottom: 15px;
 	background: #f2f3f7;
@@ -163,45 +163,6 @@ body {
 			<!-- Heading -->
 			<div class="sidebar-heading">Interface</div>
 
-			<!-- Nav Item - Pages Collapse Menu -->
-			<!-- <li class="nav-item"><a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <i class="fas fa-fw fa-cog"></i> <span>Components</span>
-			</a>
-				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-					<div class="bg-white py-2 collapse-inner rounded">
-						<h6 class="collapse-header">Custom Components:</h6>
-						<a class="collapse-item" href="buttons.html">Buttons</a> <a class="collapse-item" href="cards.html">Cards</a>
-					</div>
-				</div></li>
-
-			Nav Item - Utilities Collapse Menu
-			<li class="nav-item"><a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities"> <i class="fas fa-fw fa-wrench"></i> <span>Utilities</span>
-			</a>
-				<div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-					<div class="bg-white py-2 collapse-inner rounded">
-						<h6 class="collapse-header">Custom Utilities:</h6>
-						<a class="collapse-item" href="utilities-color.html">Colors</a> <a class="collapse-item" href="utilities-border.html">Borders</a> <a class="collapse-item" href="utilities-animation.html">Animations</a> <a class="collapse-item" href="utilities-other.html">Other</a>
-					</div>
-				</div></li>
-
-			Divider
-			<hr class="sidebar-divider">
-
-			Heading
-			<div class="sidebar-heading">Addons</div>
-
-			Nav Item - Pages Collapse Menu
-			<li class="nav-item"><a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages"> <i class="fas fa-fw fa-folder"></i> <span>Pages</span>
-			</a>
-				<div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-					<div class="bg-white py-2 collapse-inner rounded">
-						<h6 class="collapse-header">Login Screens:</h6>
-						<a class="collapse-item" href="login.html">Login</a> <a class="collapse-item" href="register.html">Register</a> <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-						<div class="collapse-divider"></div>
-						<h6 class="collapse-header">Other Pages:</h6>
-						<a class="collapse-item" href="404.html">404 Page</a> <a class="collapse-item" href="blank.html">Blank Page</a>
-					</div>
-				</div></li>
- -->
 			<!-- Nav Item - Charts -->
 			<li class="nav-item"><a class="nav-link" th:href="@{/addStudent}"> <i class="fas fa-fw fa-chart-area"></i> <span>Add Student</span></a></li>
 
@@ -399,17 +360,15 @@ body {
 
 
 								<div class="form-check">
-									<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="male" checked th:field="*{gender}"> <label class="form-check-label" for="gridRadios1"><font color="green">Male</font></label>
+									<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="male" checked th:field="*{gender}"> <label class="form-check-label" for="gridRadios1">Male</label>
 								</div>
 
 								<div class="form-check">
-									<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="female" checked th:field="*{gender}"> <label class="form-check-label" for="gridRadios2"> <font color="green">Female</font>
-									</label>
+									<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="female" checked th:field="*{gender}"> <label class="form-check-label" for="gridRadios2">Female</label>
 								</div>
 
 								<div class="form-check">
-									<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="other" checked th:field="*{gender}"> <label class="form-check-label" for="gridRadios3"> <font color="green">Other</font>
-									</label>
+									<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="other" checked th:field="*{gender}"> <label class="form-check-label" for="gridRadios3">Other</label>
 								</div>
 							</div>
 							<div class="form-group">
@@ -431,11 +390,6 @@ body {
 									<label class="form-check-label"> <input type="checkbox" class="form-check-input" value="fishing" th:field="*{hobby}">Fishing
 									</label>
 								</div>
-								<!-- <div class="col-xs-6">
-					<font color="blue"> <input type="checkbox" name="hobby" value="sports" th:field="*{hobby}">Sports<br> <input type="checkbox" name="hobby" value="riding" th:field="*{hobby}">Riding<br> <input type="checkbox" name="hobby" value="fishing" th:field="*{hobby}">Fishing
-					</font>
-				</div> -->
-
 							</div>
 							<p class="hint-text"></p>
 							<div class="form-group">
@@ -443,7 +397,7 @@ body {
 									<label>Select Country:</label>
 								</div>
 								<div class="col-xs-6">
-									<select name="country" th:field="*{country}">
+									<select name="country" class="form-control" th:field="*{country}">
 										<option value="bangladesh">Bangladesh</option>
 										<option value="india">India</option>
 										<option value="pakistan">Pakistan</option>

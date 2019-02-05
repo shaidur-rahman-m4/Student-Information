@@ -35,7 +35,7 @@ body {
 }
 
 .form-control:focus {
-	border-color: #5cb85c;
+	border-color: #f9f9f9;
 }
 
 .form-control, .btn {
@@ -162,45 +162,6 @@ body {
 			<!-- Heading -->
 			<div class="sidebar-heading">Interface</div>
 
-			<!-- Nav Item - Pages Collapse Menu -->
-			<!-- <li class="nav-item"><a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"> <i class="fas fa-fw fa-cog"></i> <span>Components</span>
-			</a>
-				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-					<div class="bg-white py-2 collapse-inner rounded">
-						<h6 class="collapse-header">Custom Components:</h6>
-						<a class="collapse-item" href="buttons.html">Buttons</a> <a class="collapse-item" href="cards.html">Cards</a>
-					</div>
-				</div></li>
-
-			Nav Item - Utilities Collapse Menu
-			<li class="nav-item"><a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities"> <i class="fas fa-fw fa-wrench"></i> <span>Utilities</span>
-			</a>
-				<div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-					<div class="bg-white py-2 collapse-inner rounded">
-						<h6 class="collapse-header">Custom Utilities:</h6>
-						<a class="collapse-item" href="utilities-color.html">Colors</a> <a class="collapse-item" href="utilities-border.html">Borders</a> <a class="collapse-item" href="utilities-animation.html">Animations</a> <a class="collapse-item" href="utilities-other.html">Other</a>
-					</div>
-				</div></li>
-
-			Divider
-			<hr class="sidebar-divider">
-
-			Heading
-			<div class="sidebar-heading">Addons</div>
-
-			Nav Item - Pages Collapse Menu
-			<li class="nav-item"><a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages"> <i class="fas fa-fw fa-folder"></i> <span>Pages</span>
-			</a>
-				<div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-					<div class="bg-white py-2 collapse-inner rounded">
-						<h6 class="collapse-header">Login Screens:</h6>
-						<a class="collapse-item" href="login.html">Login</a> <a class="collapse-item" href="register.html">Register</a> <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-						<div class="collapse-divider"></div>
-						<h6 class="collapse-header">Other Pages:</h6>
-						<a class="collapse-item" href="404.html">404 Page</a> <a class="collapse-item" href="blank.html">Blank Page</a>
-					</div>
-				</div></li>
- -->
 			<!-- Nav Item - Charts -->
 			<li class="nav-item"><a class="nav-link" th:href="@{/addStudent}"> <i class="fas fa-fw fa-chart-area"></i> <span>Add Student</span></a></li>
 
@@ -369,83 +330,87 @@ body {
 				<div class="container-fluid">
 
 					<!-- Page Heading -->
-					<h1 class="h3 mb-2 text-gray-800" align="center">Student Information System</h1>
+					<h1 class="h3 mb-2 text-gray-800" align="center">Welcome to Student Information System</h1>
 					<p class="mb-4"></p>
 
 					<!-- Student Information Form -->
 
+					<!-- Student Registration Form -->
+
 					<div class="signup-form">
 						<form action="#">
-							<p>
-								<a th:href="@{/addStudent}" class="btn btn-primary btn-icon-split">Add Student</a>
-							</p>
-							<p>
-								<a th:href="@{/allStudent}" class="btn btn-primary btn-icon-split">Student List</a>
-							</p>
+							<div class="form-group">
+								<a th:href="addStudent">
+									<button type="button" class="btn btn-primary btn-lg btn-block">Add Student</button>
+								</a>
+							</div>
+							<div class="form-group">
+								<a th:href="allStudent">
+									<button type="button" class="btn btn-success btn-lg btn-block">Student List</button>
+								</a>
+							</div>
 						</form>
 					</div>
+					<!-- /.container-fluid -->
+
 				</div>
-				<!-- /.container-fluid -->
+				<!-- End of Main Content -->
+
+				<!-- Footer -->
+				<footer class="sticky-footer bg-white">
+					<div class="container my-auto">
+						<div class="copyright text-center my-auto">
+							<span>Copyright &copy; Your Website 2019</span>
+						</div>
+					</div>
+				</footer>
+				<!-- End of Footer -->
 
 			</div>
-			<!-- End of Main Content -->
+			<!-- End of Content Wrapper -->
 
-			<!-- Footer -->
-			<footer class="sticky-footer bg-white">
-				<div class="container my-auto">
-					<div class="copyright text-center my-auto">
-						<span>Copyright &copy; Your Website 2019</span>
+		</div>
+		<!-- End of Page Wrapper -->
+
+		<!-- Scroll to Top Button-->
+		<a class="scroll-to-top rounded" href="#page-top"> <i class="fas fa-angle-up"></i>
+		</a>
+
+		<!-- Logout Modal-->
+		<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+						<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+					</div>
+					<div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+					<div class="modal-footer">
+						<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+						<a class="btn btn-primary" href="login.html">Logout</a>
 					</div>
 				</div>
-			</footer>
-			<!-- End of Footer -->
-
-		</div>
-		<!-- End of Content Wrapper -->
-
-	</div>
-	<!-- End of Page Wrapper -->
-
-	<!-- Scroll to Top Button-->
-	<a class="scroll-to-top rounded" href="#page-top"> <i class="fas fa-angle-up"></i>
-	</a>
-
-	<!-- Logout Modal-->
-	<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-					<button class="close" type="button" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">×</span>
-					</button>
-				</div>
-				<div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-				<div class="modal-footer">
-					<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-					<a class="btn btn-primary" href="login.html">Logout</a>
-				</div>
 			</div>
 		</div>
-	</div>
 
-	<!-- Bootstrap core JavaScript-->
-	<script src="vendor/jquery/jquery.min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<!-- Bootstrap core JavaScript-->
+		<script src="vendor/jquery/jquery.min.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-	<!-- Core plugin JavaScript-->
-	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+		<!-- Core plugin JavaScript-->
+		<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-	<!-- Custom scripts for all pages-->
-	<script src="js/sb-admin-2.min.js"></script>
+		<!-- Custom scripts for all pages-->
+		<script src="js/sb-admin-2.min.js"></script>
 
-	<!-- Page level plugins -->
-	<script src="vendor/datatables/jquery.dataTables.min.js"></script>
-	<script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+		<!-- Page level plugins -->
+		<script src="vendor/datatables/jquery.dataTables.min.js"></script>
+		<script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-	<!-- Page level custom scripts -->
-	<script src="js/demo/datatables-demo.js"></script>
-
+		<!-- Page level custom scripts -->
+		<script src="js/demo/datatables-demo.js"></script>
 </body>
 
 </html>
