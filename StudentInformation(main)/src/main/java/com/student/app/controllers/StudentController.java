@@ -1,38 +1,54 @@
 package com.student.app.controllers;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import com.student.app.model.Student;
 import com.student.app.service.StudentService;
 
 @Controller
 public class StudentController {
+
 	@Autowired
 	StudentService studentService;
 
-	Logger log = LoggerFactory.getLogger(this.getClass());
-
-	@RequestMapping("/")
-	public String loadHomePage() {
-		return "home";
+	@RequestMapping("/addStudent")
+	public String getAddStudent(Model model) {
+		model.addAttribute("student2", new Student());
+		return "addStudent";
 	}
 
-	@RequestMapping("/registration")
-	public String getStudent(Model model) {
-		model.addAttribute("student", new Student());
-		return "registration";
+	@RequestMapping(value = "addStudent", method = RequestMethod.POST)
+	public String postAddStudent(Model model, Student student) {
+		studentService.saveNewStudent(student);
+		model.addAttribute("success", "New Student1 Created");
+		return "addStudent";
 	}
 
-	@RequestMapping(value = "/form", method = RequestMethod.POST)
-	public String postStudent(Student student) {
-		studentService.saveStudent(student);
-		return "form";
+	@RequestMapping("/allStudent")
+	public String showAllStudent(Model model) {
+		model.addAttribute("students", studentService.findStudents());
+		return "allStudent";
+	}
+
+	@RequestMapping("/editStudent")
+	public String getUpdateStudent(@RequestParam(name = "id") Long id, Model model) {
+		model.addAttribute("student2", studentService.findOneStudent(id));
+		return "updateStudent";
+	}
+
+	@RequestMapping(value = "updateStudent", method = RequestMethod.POST)
+	public String postUpdateStudent(Model model, Student student) {
+		studentService.updateStudent(student);
+		return "redirect:/allStudent";
+	}
+
+	@RequestMapping("/deleteStudent")
+	public String deleteStudent(@RequestParam(name = "id") Long id) {
+		studentService.deleteStudentById(id);
+		return "redirect:/allStudent";
 	}
 }

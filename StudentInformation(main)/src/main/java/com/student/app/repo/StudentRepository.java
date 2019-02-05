@@ -8,5 +8,4 @@ import com.student.app.model.Student;
 @Repository
 @Transactional
 public interface StudentRepository extends JpaRepository<Student, Long> {
-
 }

@@ -1,34 +1,58 @@
 package com.student.app.model;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@Table(name = "student")
+@Table(name = "student2")
 public class Student implements Serializable {
 
 	private static final long serialVersionUID = -3009157732242241606L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id")
-	private long id;
+	@Column(name = "id") // updatable = false, nullable = false
+	private Long id;
 
-	@Column(name = "firstname")
+	@Column(name = "firstName")
 	private String firstName;
 
-	@Column(name = "lastname")
+	@Column(name = "lastName")
 	private String lastName;
 
-	@Column(name = "email")
-	private String email;
+	@Column(name = "gender")
+	private String gender;
 
-	@Column(name = "password")
-	private String password;
+	@Column(name = "hobby")
+	private String hobby;
+
+	@Column(name = "country")
+	private String country;
+
+	@Column(name = "roll")
+	private long roll;
+
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	@Temporal(TemporalType.DATE)
+	@Column(name = "dateOfBirth")
+	private Date dateOfBirth;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public String getFirstName() {
 		return firstName;
@@ -46,27 +70,50 @@ public class Student implements Serializable {
 		this.lastName = lastName;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getGender() {
+		return gender;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getHobby() {
+		return hobby;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setHobby(String hobby) {
+		this.hobby = hobby;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	public long getRoll() {
+		return roll;
+	}
+
+	public void setRoll(long roll) {
+		this.roll = roll;
+	}
+
+	public Date getDateOfBirth() {
+		return dateOfBirth;
+	}
+
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
 	}
 
 	@Override
 	public String toString() {
-
-		return String.format("student[id='%d', firstname='%s', lastname='%s', email='%s', password='%s']", id,
-				firstName, lastName, email, password);
+		return "Student [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", gender=" + gender
+				+ ", hobby=" + hobby + ", country=" + country + ", roll=" + roll + ", dateOfBirth=" + dateOfBirth + "]";
 	}
 
 }
