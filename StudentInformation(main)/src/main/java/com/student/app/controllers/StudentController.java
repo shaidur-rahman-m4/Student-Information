@@ -12,6 +12,8 @@ import com.student.app.service.StudentService;
 @Controller
 public class StudentController {
 
+	private String deletedStudent;
+
 	@Autowired
 	StudentService studentService;
 
@@ -30,12 +32,16 @@ public class StudentController {
 	public String postAddStudent(Model model, Student student) {
 		studentService.saveNewStudent(student);
 		model.addAttribute("success", "New Student Created");
+		model.addAttribute("student", new Student());
 		return "addStudent";
 	}
 
 	@RequestMapping("/allStudent")
 	public String showAllStudent(Model model) {
+		if (deletedStudent != null)
+			model.addAttribute("delMsg", "Row Deleted Successfull");
 		model.addAttribute("students", studentService.findStudents());
+		deletedStudent = null;
 		return "allStudent";
 	}
 
@@ -53,6 +59,7 @@ public class StudentController {
 
 	@RequestMapping("/deleteStudent")
 	public String deleteStudent(@RequestParam(name = "id") Long id) {
+		deletedStudent = id.toString();
 		studentService.deleteStudentById(id);
 		return "redirect:/allStudent";
 	}

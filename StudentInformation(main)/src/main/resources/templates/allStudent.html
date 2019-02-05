@@ -225,7 +225,9 @@
 					<!-- DataTales Example -->
 					<div class="card shadow mb-4">
 						<div class="card-header py-3">
-							<h6 class="m-0 font-weight-bold text-primary">Student List</h6>
+							<h6 class="m-0 font-weight-bold text-primary">
+								<font color="#e21f0d" th:text="${delMsg}" id="delMsg"> </font>
+							</h6>
 						</div>
 						<div class="card-body">
 							<div class="table-responsive">
@@ -339,6 +341,11 @@
 
 	<!-- Page level custom scripts -->
 	<script src="js/demo/datatables-demo.js"></script>
+	.
+	<script>
+		var msg = "test";
+		document.getElementById("delMsg").value = msg;
+	</script>
 
 </body>
 

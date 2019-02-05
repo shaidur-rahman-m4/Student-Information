@@ -332,9 +332,9 @@ body {
 					<!-- Student Registration Form -->
 
 					<div class="signup-form">
-						<form action="#" th:action="@{/addStudent}" th:object="${student}" method="post">
+						<form id="submitForm" action="#" th:action="@{/addStudent}" th:object="${student}" method="post">
 							<h2></h2>
-							<font color="green">
+							<font color="blue">
 								<p align="center" th:text="${success}"></p>
 							</font>
 							<div class="form-group">
@@ -411,6 +411,9 @@ body {
 								<button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
 							</div>
 							<div class="form-group">
+								<input type="Reset" name="resetbtn" class="btn btn-danger btn-lg btn-block" value="Reset Form">
+							</div>
+							<div class="form-group">
 								<address>
 									<a href="allStudent">Show All Student</a>
 								</address>
@@ -482,7 +485,6 @@ body {
 
 	<!-- Page level custom scripts -->
 	<script src="js/demo/datatables-demo.js"></script>
-
 </body>
 
 </html>
