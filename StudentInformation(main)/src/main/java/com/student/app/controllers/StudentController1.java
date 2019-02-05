@@ -19,11 +19,6 @@ public class StudentController1 {
 
 	Logger log = LoggerFactory.getLogger(this.getClass());
 
-	@RequestMapping("/")
-	public String loadHomePage() {
-		return "home";
-	}
-
 	@RequestMapping("/registration")
 	public String getStudent(Model model) {
 		model.addAttribute("student", new Student1());

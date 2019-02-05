@@ -15,6 +15,11 @@ public class StudentController {
 	@Autowired
 	StudentService studentService;
 
+	@RequestMapping("/")
+	public String loadHomePage() {
+		return "home";
+	}
+
 	@RequestMapping("/addStudent")
 	public String getAddStudent(Model model) {
 		model.addAttribute("student", new Student());
