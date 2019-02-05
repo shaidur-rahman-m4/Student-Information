@@ -12,7 +12,7 @@ import com.student.app.service.StudentService;
 @Controller
 public class StudentController {
 
-	private String deletedStudent;
+	private String msg;
 
 	@Autowired
 	StudentService studentService;
@@ -38,10 +38,10 @@ public class StudentController {
 
 	@RequestMapping("/allStudent")
 	public String showAllStudent(Model model) {
-		if (deletedStudent != null)
-			model.addAttribute("delMsg", "Row Deleted Successfull");
+		if (msg != null)
+			model.addAttribute("Message", "Row " + msg + " Successfull");
 		model.addAttribute("students", studentService.findStudents());
-		deletedStudent = null;
+		msg = null;
 		return "allStudent";
 	}
 
@@ -54,13 +54,14 @@ public class StudentController {
 	@RequestMapping(value = "updateStudent", method = RequestMethod.POST)
 	public String postUpdateStudent(Model model, Student student) {
 		studentService.updateStudent(student);
+		msg = "Updated";
 		return "redirect:/allStudent";
 	}
 
 	@RequestMapping("/deleteStudent")
 	public String deleteStudent(@RequestParam(name = "id") Long id) {
-		deletedStudent = id.toString();
 		studentService.deleteStudentById(id);
+		msg = "Deleted";
 		return "redirect:/allStudent";
 	}
 }
