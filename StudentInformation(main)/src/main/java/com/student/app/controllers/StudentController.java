@@ -17,14 +17,14 @@ public class StudentController {
 
 	@RequestMapping("/addStudent")
 	public String getAddStudent(Model model) {
-		model.addAttribute("student2", new Student());
+		model.addAttribute("student", new Student());
 		return "addStudent";
 	}
 
 	@RequestMapping(value = "addStudent", method = RequestMethod.POST)
 	public String postAddStudent(Model model, Student student) {
 		studentService.saveNewStudent(student);
-		model.addAttribute("success", "New Student1 Created");
+		model.addAttribute("success", "New Student Created");
 		return "addStudent";
 	}
 
@@ -36,7 +36,7 @@ public class StudentController {
 
 	@RequestMapping("/editStudent")
 	public String getUpdateStudent(@RequestParam(name = "id") Long id, Model model) {
-		model.addAttribute("student2", studentService.findOneStudent(id));
+		model.addAttribute("student", studentService.findOneStudent(id));
 		return "updateStudent";
 	}
 
